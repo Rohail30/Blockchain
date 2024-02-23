@@ -28,7 +28,7 @@ In 2009, Satoshi Nakamoto introduced Bitcoin, leveraging blockchain technology a
 ### Security Features:
 
 - **Changing Data**: Modifying data in a single block of a blockchain is incredibly challenging because altering one block would require changing the data in all subsequent blocks, which is practically impossible due to the distributed nature of the network.
-- **Transparency**: Copies of the blockchain are available to all participants in the network, ensuring transparency and making any attempted changes immediately visible to everyone.
+- **Transparency**: Copies of the blockchain are available to all participants(miners) in the network, ensuring transparency and making any attempted changes immediately visible to everyone.
 
 ### Proof of Work (PoW):
 

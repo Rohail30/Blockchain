@@ -13,6 +13,15 @@ Blockchain is a shared, immutable ledger that facilitates the process of recordi
 - Trustable
 - Secure
 
+## Structure of Blockchain:
+
+- **Chain of Blocks**:
+  - Blockchain is made up of blocks linked together in a chain. The first block of blockchain is called genisis and it starts with 0000 hash.
+- **Block Components**:
+  - **Relevant Data**: Each block stores important information, like transactions.
+  - **Hash**: Every block has a unique code called a hash, like a digital fingerprint.
+  - **Previous Block Hash**: Each block also includes the hash of the previous block. This links the blocks together, making it hard to change past data without anyone noticing.
+
 ## Smart Contracts: Legal Contracts
 
 **Definition:** Smart contracts are self-executing contracts with the terms of the agreement directly written into code. They automatically execute and enforce the terms of the contract when predefined conditions are met.

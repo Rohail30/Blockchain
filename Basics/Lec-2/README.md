@@ -157,7 +157,7 @@ Forks can be resolved by achieving consensus among network participants to deter
 - Lower performance scalability.
 - Reduced privacy as many transactions are visible.
 
-# Permissioned Blockchain
+## Permissioned Blockchain
 
 **Definition**: Permissioned blockchains are closed networks where only a set group is authorized to validate transactions or data. They are employed in networks where high privacy and security are paramount.
 

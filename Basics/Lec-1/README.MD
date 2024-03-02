@@ -38,6 +38,8 @@ Blockchain is a shared, immutable ledger that facilitates the process of recordi
 - **Backend**: The underlying infrastructure and protocols that power the blockchain network, including consensus mechanisms, data storage, and smart contract execution.
   - Example: Smart contracts
 
+- **Ether.js**: links Web2 with Web3
+
 # Nodes in Blockchain
 
 In blockchain, a node refers to any device that participates in the network by maintaining a copy of the blockchain and validating transactions. Nodes can be run by individuals, organizations, or entities, and they play a crucial role in the decentralized nature of blockchain networks.

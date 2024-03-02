@@ -36,7 +36,7 @@ Blockchain is a shared, immutable ledger that facilitates the process of recordi
   - Example: Blockchain Wallet Application
 
 - **Backend**: The underlying infrastructure and protocols that power the blockchain network, including consensus mechanisms, data storage, and smart contract execution.
-  - Example: ether.js, Smart contracts
+  - Example: Smart contracts
 
 # Nodes in Blockchain
 

@@ -246,3 +246,8 @@ Consortium blockchains, also known as Federated Blockchains, are managed by mult
 - Transparency: Risk of hacking if organizations become corrupt, leading to information concealment.
 - Vulnerability: Compromised nodes increase vulnerability in the blockchain.
 
+## Double spending
+Double spending is a fraudulent transaction in which the same cryptocurrency is spent more than once. It's a significant concern in decentralized digital currencies like Bitcoin because, unlike physical cash, digital information can be reproduced or copied easily.
+
+Proof of Work (PoW) prevents double spending by making it computationally expensive to add a new block to the blockchain. Miners must solve complex mathematical puzzles to validate transactions and add them to the blockchain. This process requires significant computational power and energy expenditure. Once a transaction is confirmed and added to the blockchain, it becomes extremely difficult and economically infeasible to alter or reverse it, thus preventing double spending.
+

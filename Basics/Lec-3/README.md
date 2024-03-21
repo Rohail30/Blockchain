@@ -66,6 +66,9 @@ Cryptographic hash functions are mathematical algorithms that **_take an input (
 ## Digital Signatures
 A digital signature is a cryptographic technique used to authenticate the sender of a digital message or document and ensure its integrity. It provides a way for the recipient to verify that the message was indeed sent by the claimed sender and has not been altered during transmission.
 
+![image](https://github.com/Rohail30/Blockchain/assets/96627590/f2e3c981-2e30-4012-aee7-4f5da0cf498f)
+
+
 Here's how digital signatures work:
 
 **Signing:** The sender generates a digital signature by applying a cryptographic algorithm to the message or document they want to send. This algorithm uses the sender's private key to create a unique digital fingerprint, known as the signature.

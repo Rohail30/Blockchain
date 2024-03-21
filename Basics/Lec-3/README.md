@@ -61,7 +61,7 @@ These algorithms play a crucial role in modern cryptography and are fundamental 
 ![image](https://github.com/Rohail30/Blockchain/assets/96627590/7e141632-d2a5-4fff-ac37-3320cc727a56)
 
 ## Cryptographic Hash Functions
-Cryptographic hash functions are mathematical algorithms that take an input (or 'message') and produce a fixed-size string of characters, known as a hash value or digest. These functions are designed to be fast to compute and irreversible, meaning it's computationally infeasible to reverse-engineer the original input from the hash value.
+Cryptographic hash functions are mathematical algorithms that **_take an input (or 'message') and produce a fixed-size string of characters_**, known as a hash value or digest. These functions are designed to be fast to compute and irreversible, meaning it's computationally infeasible to reverse-engineer the original input from the hash value.
 
 ## Digital Signatures
 A digital signature is a cryptographic technique used to authenticate the sender of a digital message or document and ensure its integrity. It provides a way for the recipient to verify that the message was indeed sent by the claimed sender and has not been altered during transmission.

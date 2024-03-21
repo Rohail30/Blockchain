@@ -10,7 +10,7 @@ In blockchain, a node refers to any device that participates in the network by m
   - No Single Point of Control: In a decentralized system, there is no single point of control or failure. Instead, control is distributed among multiple nodes, reducing the risk of censorship, manipulation, or failure.
   - Redundancy and Resilience: Decentralization provides redundancy and resilience to the system, as it can continue to function even if some nodes fail or are compromised.
   - Increased Trust and Transparency: Decentralization enhances trust and transparency by allowing participants to verify and validate transactions independently, without relying on a central authority.
-  - 
+    
 <img src='./cd.png'>
 
 ## Distributed System:

@@ -42,3 +42,5 @@ Given:
    - Given the ciphertext c = 10, compute the plaintext message m = c^d mod n = 10^3 mod 15 = 1000 mod 15 = 10.
 ```
 So, the original plaintext message (m = 10) is successfully encrypted to ciphertext (c = 10) and decrypted back to the original plaintext message (m = 10) using RSA encryption and decryption with p = 3 and q = 5.
+
+

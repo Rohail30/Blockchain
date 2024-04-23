@@ -1,3 +1,6 @@
+## Solidity
+The first Solidity smart contract, named Part_A, declares state variables of various data types and includes functions to interact with and retrieve these variables. It showcases basic operations like storing and retrieving data, and accessing contract balance.
+
 ```solidity
 // SPDX-License-Identifier: MIT
 
@@ -58,6 +61,8 @@ contract Part_A {
 }
 ```
 ---
+
+The second contract, Part_B, provides functions for basic arithmetic operations (addition, subtraction, multiplication, division, modulus), incrementing, decrementing, and comparison between two integer variables. Users can set values for 'a' and 'b' and perform these operations, returning the results.
 
 ```solidity
 // SPDX-License-Identifier: MIT

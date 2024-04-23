@@ -1,9 +1,21 @@
+## Solidty
+This Solidity smart contract, named smartContract, provides functions for various purposes:
+
+- `printString()`: Returns a string "Hello World".
+- `mod(uint256 a, uint256 b)`: Computes the modulus of two unsigned integers.
+- `compareInt(int256 a, int256 b)`: Compares two signed integers and returns a boolean result.
+- `multipleReturns(int x, int y, int z)`: Returns three integers as multiple return values.
+- `printArray()`: Creates and returns an array of unsigned integers.
+- `acceptEthers()`: Allows the contract to accept incoming ether and transfers it to a predefined owner address.
+- `withdrawEthers()`: Allows the contract owner to withdraw the contract's balance in ether.
+- `getBalance()`: Returns the current balance of the contract in ether.
+
 ```solidity
 // SPDX-License-Identifier: MIT
 
 pragma solidity >=0.8.2 <0.9.0;
 
-contract Part_A {
+contract smartContract {
     function printString() public pure returns (string memory) {
         return "Hello World";
     }

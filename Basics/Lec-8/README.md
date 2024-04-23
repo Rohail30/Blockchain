@@ -1,5 +1,5 @@
 ## Solidity
-The first Solidity smart contract, named Part_A, declares state variables of various data types and includes functions to interact with and retrieve these variables. It showcases basic operations like storing and retrieving data, and accessing contract balance.
+The first Solidity smart contract, smartContract_A, declares state variables of various data types and includes functions to interact with and retrieve these variables. It showcases basic operations like storing and retrieving data, and accessing contract balance.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -10,7 +10,7 @@ pragma solidity >=0.8.2 <0.9.0;
 // ^0.8.2 compatible with this version and above
 // >=0.8.2 <0.9.0 compatible with version greater than or equal to 0.8.2 and less than 0.9.0
 
-contract Part_A {
+contract smartContract_A {
     // State Variables (permanently stored in contract storage)
     // Data Types
     int256 value = -100; // int (int8 to int256)
@@ -62,14 +62,14 @@ contract Part_A {
 ```
 ---
 
-The second contract, Part_B, provides functions for basic arithmetic operations (addition, subtraction, multiplication, division, modulus), incrementing, decrementing, and comparison between two integer variables. Users can set values for 'a' and 'b' and perform these operations, returning the results.
+The second contract, smartContract_B, provides functions for basic arithmetic operations (addition, subtraction, multiplication, division, modulus), incrementing, decrementing, and comparison between two integer variables. Users can set values for 'a' and 'b' and perform these operations, returning the results.
 
 ```solidity
 // SPDX-License-Identifier: MIT
 
 pragma solidity >=0.8.2 <0.9.0;
 
-contract Part_B {
+contract smartContract_B {
     int256 a;
     int256 b;
 

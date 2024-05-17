@@ -1,4 +1,4 @@
-
+```
 // contract lecture13{
 //     uint public  a;
 //     uint public b;
@@ -66,3 +66,4 @@ contract HotelSystem {
         }
     }
 }
+```

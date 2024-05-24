@@ -23,7 +23,7 @@ function getInt() public view returns (int256) {
 
 #### access specifiers / visibility specifiers
 
-#### Array:
+#### Array Syntax:
 ```solidity
    function printArray() public pure returns (uint256[] memory) {
         uint256[] memory arr = new uint256[](5);    //Creating an array of size 5
@@ -36,3 +36,23 @@ function getInt() public view returns (int256) {
     }
 
 ```
+
+#### Transaction Syntax:
+```solidity
+       function acceptEthers() public payable {
+        address _owner = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
+        payable(_owner).transfer(address(this).balance); //Transfer the ethers to the owner
+    }
+
+    function withdrawEthers() public {
+        address owner = payable(msg.sender);
+        payable(owner).transfer(address(this).balance);
+    }
+
+    function getBalance() public view returns (uint256) {
+        return address(this).balance;
+    }
+```
+
+
+

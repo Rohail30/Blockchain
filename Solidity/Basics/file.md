@@ -1,4 +1,4 @@
-**J-09**
+**J-09:**
 Variables and Function
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -111,9 +111,9 @@ contract Part_B {
     }
 }
 ```
-Array, receive, accept and withdraw
-**J-10**
 
+**J-10:**
+Array, receive, accept and withdraw
 ```solidity
 // SPDX-License-Identifier: MIT
 

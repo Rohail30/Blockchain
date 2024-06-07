@@ -629,7 +629,6 @@ contract Voting {
 }
 
 ```
-**Explanation:** This complete example integrates all the elements discussed. It includes state variables, an enum, a struct, mappings, events, and functions. The `onlyOwner` modifier ensures that certain functions can only be called by the contract owner.
 
 
 

@@ -553,93 +553,81 @@ contract MyContract {
 ```
 **Explanation:** Structs allow you to define custom data types. Here, `Person` has `name` and `age` properties. The `addPerson` function adds a new person to the `people` array, and `getPerson` retrieves a person's details by index.
 
-## Complete Example
-Combining all elements into a single contract.
+## Voting
+
 ```solidity
 pragma solidity ^0.8.0;
 
-contract MyContract {
-    // State variables
-    address public owner;
-    uint public count;
-
-    // Enum
-    enum Status { Pending, Active, Inactive }
-    Status public status;
-
-    // Struct
-    struct Person {
-        string name;
-        uint age;
-    }
-    Person[] public people;
-
-    // Mapping
-    mapping(address => uint) public balances;
-
-    // Events
-    event CountIncremented(uint newCount);
-    event PersonAdded(string name, uint age);
-
-    // Constructor
-    constructor() {
-        owner = msg.sender;
+contract Voting {
+    // Structure to represent a voter
+    struct Voter {
+        bool voted;  // if true, that person has already voted
+        uint vote;   // index of the voted proposal
     }
 
-    // Modifiers
-    modifier onlyOwner() {
-        require(msg.sender == owner, "Not the contract owner");
-        _;
+    // Structure to represent a proposal
+    struct Proposal {
+        string name;   // short name of the proposal
+        uint voteCount; // number of accumulated votes
     }
 
-    // Functions
-    function increment() public onlyOwner {
-        count += 1;
-        emit CountIncremented(count);
+    address public chairperson;
+    mapping(address => Voter) public voters;
+    Proposal[] public proposals;
+
+    // Constructor to create a new voting contract
+    constructor(string[] memory proposalNames) {
+        chairperson = msg.sender;
+        for (uint i = 0; i < proposalNames.length; i++) {
+            proposals.push(Proposal({
+                name: proposalNames[i],
+                voteCount: 0
+            }));
+        }
     }
 
-    function getCount() public view returns (uint) {
-        return count;
+    // Function to give the right to vote to an address
+    function giveRightToVote(address voter) public {
+        require(
+            msg.sender == chairperson,
+            "Only chairperson can give right to vote."
+        );
+        require(
+            !voters[voter].voted,
+            "The voter already voted."
+        );
+        voters[voter].voted = false;
     }
 
-    function addNumber(uint _number) public {
-        numbers.push(_number);
+    // Function to cast a vote for a proposal
+    function vote(uint proposalIndex) public {
+        Voter storage sender = voters[msg.sender];
+        require(!sender.voted, "Already voted.");
+        require(proposalIndex < proposals.length, "Invalid proposal index.");
+
+        sender.voted = true;
+        sender.vote = proposalIndex;
+
+        proposals[proposalIndex].voteCount += 1;
     }
 
-    function removeLastNumber() public {
-        numbers.pop();
+    // Function to get the winning proposal index
+    function winningProposal() public view returns (uint winningProposalIndex) {
+        uint winningVoteCount = 0;
+        for (uint i = 0; i < proposals.length; i++) {
+            if (proposals[i].voteCount > winningVoteCount) {
+                winningVoteCount = proposals[i].voteCount;
+                winningProposalIndex = i;
+            }
+        }
     }
 
-    function getNumber(uint _index) public view returns (uint) {
-        return numbers[_index];
-    }
-
-    function updateBalance(address _address, uint _amount) public {
-        balances[_address] = _amount;
-    }
-
-    function getBalance(address _address) public view returns (uint) {
-        return balances[_address];
-    }
-
-    function setStatus(Status _status) public {
-        status = _status;
-    }
-
-    function getStatus() public view returns (Status) {
-        return status;
-    }
-
-    function addPerson(string memory _name, uint _age) public {
-        people.push(Person(_name, _age));
-        emit PersonAdded(_name, _age);
-    }
-
-    function getPerson(uint _index) public view returns (string memory, uint) {
-        Person storage person = people[_index];
-        return (person.name, person.age);
+    // Function to get the name of the winning proposal
+    function winnerName() public view returns (string memory winnerName_) {
+        winnerName_ = proposals[winningProposal()].name;
     }
 }
+
 ```
 **Explanation:** This complete example integrates all the elements discussed. It includes state variables, an enum, a struct, mappings, events, and functions. The `onlyOwner` modifier ensures that certain functions can only be called by the contract owner.
 

@@ -389,6 +389,240 @@ contract Part_B {
 }
 ```
 
+## Solidity Basic Syntax and Explanation
+
+## Version Pragma
+Specifies the Solidity compiler version.
+```solidity
+pragma solidity ^0.8.0;
+```
+**Explanation:** This line ensures that the contract is compiled with a compatible version of the Solidity compiler, in this case, any version starting from 0.8.0.
+
+## Contract Declaration
+Defines a new contract.
+```solidity
+contract MyContract {
+    // State variables, functions, etc.
+}
+```
+**Explanation:** This is how you declare a new contract in Solidity. The contract can contain state variables, functions, and other contract-related elements.
+
+## State Variables
+Permanent storage in the contract.
+```solidity
+contract MyContract {
+    uint public count;
+}
+```
+**Explanation:** State variables are stored on the blockchain. The `public` keyword automatically creates a getter function for the `count` variable.
+
+## Functions
+Executable units of code within a contract.
+```solidity
+contract MyContract {
+    uint public count;
+
+    function increment() public {
+        count += 1;
+    }
+
+    function getCount() public view returns (uint) {
+        return count;
+    }
+}
+```
+**Explanation:** Functions contain the logic of the contract. The `increment` function increases the `count` by 1, and `getCount` returns the current value of `count`. The `public` keyword makes these functions accessible externally.
+
+## Arrays
+Dynamic and fixed-size arrays.
+```solidity
+contract MyContract {
+    uint[] public numbers; // Dynamic array
+    uint[10] public fixedNumbers; // Fixed-size array
+
+    function addNumber(uint _number) public {
+        numbers.push(_number); // Push to array
+    }
+
+    function removeLastNumber() public {
+        numbers.pop(); // Pop from array
+    }
+
+    function getNumber(uint _index) public view returns (uint) {
+        return numbers[_index];
+    }
+}
+```
+**Explanation:** Arrays store lists of elements. `numbers` is a dynamic array that can grow or shrink, while `fixedNumbers` has a fixed size. The `push` method adds an element to the end of a dynamic array, and `pop` removes the last element.
+
+## Mapping
+Key-value store.
+```solidity
+contract MyContract {
+    mapping(address => uint) public balances;
+
+    function updateBalance(address _address, uint _amount) public {
+        balances[_address] = _amount;
+    }
+
+    function getBalance(address _address) public view returns (uint) {
+        return balances[_address];
+    }
+}
+```
+**Explanation:** Mappings are used for key-value storage. Here, `balances` maps addresses to unsigned integers. The `updateBalance` function updates the balance for a given address, and `getBalance` returns the balance of a given address.
+
+## Enum
+User-defined type with a set of named values.
+```solidity
+contract MyContract {
+    enum Status { Pending, Active, Inactive }
+
+    Status public status;
+
+    function setStatus(Status _status) public {
+        status = _status;
+    }
+
+    function getStatus() public view returns (Status) {
+        return status;
+    }
+}
+```
+**Explanation:** Enums are custom data types with a finite set of values. Here, `Status` can be `Pending`, `Active`, or `Inactive`. The `setStatus` function sets the status, and `getStatus` returns the current status.
+
+## Events
+Logging events on the blockchain.
+```solidity
+contract MyContract {
+    event CountIncremented(uint newCount);
+
+    uint public count;
+
+    function increment() public {
+        count += 1;
+        emit CountIncremented(count);
+    }
+}
+```
+**Explanation:** Events are used for logging on the blockchain. The `CountIncremented` event is emitted whenever the `count` is incremented, allowing external applications to listen for this event.
+
+## Structs
+Custom data types.
+```solidity
+contract MyContract {
+    struct Person {
+        string name;
+        uint age;
+    }
+
+    Person[] public people;
+
+    function addPerson(string memory _name, uint _age) public {
+        people.push(Person(_name, _age));
+    }
+
+    function getPerson(uint _index) public view returns (string memory, uint) {
+        Person storage person = people[_index];
+        return (person.name, person.age);
+    }
+}
+```
+**Explanation:** Structs allow you to define custom data types. Here, `Person` has `name` and `age` properties. The `addPerson` function adds a new person to the `people` array, and `getPerson` retrieves a person's details by index.
+
+## Complete Example
+Combining all elements into a single contract.
+```solidity
+pragma solidity ^0.8.0;
+
+contract MyContract {
+    // State variables
+    address public owner;
+    uint public count;
+
+    // Enum
+    enum Status { Pending, Active, Inactive }
+    Status public status;
+
+    // Struct
+    struct Person {
+        string name;
+        uint age;
+    }
+    Person[] public people;
+
+    // Mapping
+    mapping(address => uint) public balances;
+
+    // Events
+    event CountIncremented(uint newCount);
+    event PersonAdded(string name, uint age);
+
+    // Constructor
+    constructor() {
+        owner = msg.sender;
+    }
+
+    // Modifiers
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Not the contract owner");
+        _;
+    }
+
+    // Functions
+    function increment() public onlyOwner {
+        count += 1;
+        emit CountIncremented(count);
+    }
+
+    function getCount() public view returns (uint) {
+        return count;
+    }
+
+    function addNumber(uint _number) public {
+        numbers.push(_number);
+    }
+
+    function removeLastNumber() public {
+        numbers.pop();
+    }
+
+    function getNumber(uint _index) public view returns (uint) {
+        return numbers[_index];
+    }
+
+    function updateBalance(address _address, uint _amount) public {
+        balances[_address] = _amount;
+    }
+
+    function getBalance(address _address) public view returns (uint) {
+        return balances[_address];
+    }
+
+    function setStatus(Status _status) public {
+        status = _status;
+    }
+
+    function getStatus() public view returns (Status) {
+        return status;
+    }
+
+    function addPerson(string memory _name, uint _age) public {
+        people.push(Person(_name, _age));
+        emit PersonAdded(_name, _age);
+    }
+
+    function getPerson(uint _index) public view returns (string memory, uint) {
+        Person storage person = people[_index];
+        return (person.name, person.age);
+    }
+}
+```
+**Explanation:** This complete example integrates all the elements discussed. It includes state variables, an enum, a struct, mappings, events, and functions. The `onlyOwner` modifier ensures that certain functions can only be called by the contract owner.
+
+
+
+
 
 
 

@@ -1,5 +1,5 @@
 **J-09**
-
+Variables and Function
 ```solidity
 // SPDX-License-Identifier: MIT
 
@@ -111,7 +111,7 @@ contract Part_B {
     }
 }
 ```
-
+Array, receive, accept and withdraw
 **J-10**
 
 ```solidity

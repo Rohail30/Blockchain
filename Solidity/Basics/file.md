@@ -167,8 +167,8 @@ contract Part_A {
 }
 ```
 
-**J-11**
-
+**J-11:**
+Enum, Mapping, struct
 ```solidity
 // SPDX-License-Identifier: MIT
 
